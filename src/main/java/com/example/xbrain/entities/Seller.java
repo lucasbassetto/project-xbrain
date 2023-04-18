@@ -3,6 +3,8 @@ package com.example.xbrain.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 @Entity
 @Table(name = "tb_seller")
@@ -13,6 +15,9 @@ public class Seller implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @OneToMany(mappedBy = "seller")
+    private List<Sale> sales = new ArrayList<>();
 
     public Seller() {
     }
@@ -36,6 +41,10 @@ public class Seller implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Sale> getSales() {
+        return sales;
     }
 
     @Override

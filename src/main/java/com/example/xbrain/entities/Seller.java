@@ -1,5 +1,6 @@
 package com.example.xbrain.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class Seller implements Serializable {
     private Long id;
     private String name;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "seller")
     private List<Sale> sales = new ArrayList<>();
 

@@ -1,5 +1,7 @@
 package com.example.xbrain.dto;
 
+import java.util.Objects;
+
 public class SellerDTO
 {
     private Long id;
@@ -57,5 +59,18 @@ public class SellerDTO
 
     public void setSalesQuantity(Double salesQuantity) {
         this.salesQuantity = salesQuantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SellerDTO sellerDTO = (SellerDTO) o;
+        return Objects.equals(id, sellerDTO.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

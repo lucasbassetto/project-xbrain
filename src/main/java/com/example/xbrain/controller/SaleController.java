@@ -1,15 +1,17 @@
 package com.example.xbrain.controller;
 
+import com.example.xbrain.dto.SellerDTO;
 import com.example.xbrain.entities.Sale;
+import com.example.xbrain.repository.SaleRepository;
 import com.example.xbrain.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/sales")
@@ -17,6 +19,9 @@ public class SaleController {
 
     @Autowired
     private SaleService service;
+
+    @Autowired
+    private SaleRepository saleRepository;
 
     @GetMapping
     public ResponseEntity<List<Sale>> findAll() {

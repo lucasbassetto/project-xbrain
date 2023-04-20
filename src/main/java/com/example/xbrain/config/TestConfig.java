@@ -34,7 +34,7 @@ public class TestConfig implements CommandLineRunner {
         Sale sa4 = new Sale(null, Instant.parse("2023-02-13T11:30:11Z"), 90.00, s1);
         Sale sa5 = new Sale(null, Instant.parse("2023-02-13T12:30:11Z"), 100.00, s1);
         Sale sa6 = new Sale(null, Instant.parse("2023-02-13T15:30:11Z"), 300.00, s1);
-        Sale sa7 = new Sale(null, Instant.parse("2023-02-14T20:32:11Z"), 1000.00, s1);
+        Sale sa7 = new Sale(null, Instant.parse("2023-02-14T12:32:11Z"), 1000.00, s1);
         Sale sa8 = new Sale(null, Instant.parse("2023-02-16T02:39:10Z"), 1000.00, s2);
         Sale sa9 = new Sale(null, Instant.parse("2023-02-16T12:12:22Z"), 500.00, s2);
         Sale sa10 = new Sale(null, Instant.parse("2023-02-17T12:12:22Z"), 500.00, s2);

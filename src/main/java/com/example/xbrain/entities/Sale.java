@@ -17,7 +17,7 @@ public class Sale implements Serializable {
     private Long id;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-    private Instant moment;
+    private Instant date;
 
     private Double price;
 
@@ -28,9 +28,9 @@ public class Sale implements Serializable {
     public Sale() {
     }
 
-    public Sale(Long id, Instant moment, Double price, Seller seller) {
+    public Sale(Long id, Instant date, Double price, Seller seller) {
         this.id = id;
-        this.moment = moment;
+        this.date = date;
         this.price = price;
         this.seller = seller;
     }
@@ -43,12 +43,12 @@ public class Sale implements Serializable {
         this.id = id;
     }
 
-    public Instant getMoment() {
-        return moment;
+    public Instant getDate() {
+        return date;
     }
 
-    public void setMoment(Instant moment) {
-        this.moment = moment;
+    public void setDate(Instant date) {
+        this.date = date;
     }
 
     public Double getPrice() {

@@ -20,9 +20,6 @@ public class SaleController {
     @Autowired
     private SaleService service;
 
-    @Autowired
-    private SaleRepository saleRepository;
-
     @GetMapping
     public ResponseEntity<List<Sale>> findAll() {
         List<Sale> list = service.findAll();
@@ -32,6 +29,11 @@ public class SaleController {
     public ResponseEntity<Sale> findById(@PathVariable Long id) {
         Sale obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
+    }
+    @GetMapping(value = "/between")
+    public ResponseEntity<List<SellerDTO>> findAllByDateBetween(@RequestParam Instant startDate, @RequestParam Instant endDate) {
+        List<SellerDTO> list = service.findBetween(startDate, endDate);
+        return ResponseEntity.ok().body(list);
     }
 }
 

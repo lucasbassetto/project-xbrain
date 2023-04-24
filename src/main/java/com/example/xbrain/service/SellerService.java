@@ -25,4 +25,8 @@ public class SellerService {
     public Seller insert(Seller obj) {
         return repository.save(obj);
     }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
 }

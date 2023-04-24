@@ -30,6 +30,5 @@ public class SaleService {
 //    public List<SellerDTO> findBetween(@RequestParam Instant startDate, @RequestParam Instant endDate) {
 //
 //        long days = Duration.between(startDate,endDate).toDays();
-
 //    }
 }

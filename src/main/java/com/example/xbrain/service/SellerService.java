@@ -2,8 +2,11 @@ package com.example.xbrain.service;
 
 import com.example.xbrain.entities.Seller;
 import com.example.xbrain.repository.SellerRepository;
+import com.example.xbrain.service.exception.DatabaseException;
 import com.example.xbrain.service.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,7 +31,13 @@ public class SellerService {
     }
 
     public void delete(Long id) {
-        repository.deleteById(id);
+        try {
+            repository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResourceNotFoundException(id);
+        } catch (DataIntegrityViolationException e) {
+            throw new DatabaseException(e.getMessage());
+        }
     }
 
     public Seller update(Long id, Seller obj) {

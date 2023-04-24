@@ -48,14 +48,14 @@ public class Seller implements Serializable {
     public List<Sale> getSales() {
         return sales;
     }
-    public Double getTotalSales()
-    {
-        Double sum = 0.0;
-        for(Sale x: sales) {
-            sum += x.getPrice();
-        }
-        return sum;
-    }
+
+//    public Double getTotalSales() {
+//        Double sum = 0.0;
+//        for(Sale x: sales) {
+//            sum += x.getPrice();
+//        }
+//        return sum;
+//    }
 
     @Override
     public boolean equals(Object o) {

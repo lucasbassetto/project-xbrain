@@ -34,6 +34,12 @@ public class SaleController {
 //        List<SellerDTO> list = service.findBetween(startDate, endDate);
 //        return ResponseEntity.ok().body(list);
 //    }
+
+    @GetMapping(value = "/between")
+    public ResponseEntity<List<Object[]>> findAllByDateBetween(@RequestParam Instant startDate, @RequestParam Instant endDate) {
+        List<Object[]> list = service.findDateBetween(startDate, endDate);
+        return ResponseEntity.ok().body(list);
+    }
 }
 
 

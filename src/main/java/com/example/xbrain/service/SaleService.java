@@ -27,8 +27,12 @@ public class SaleService {
         Optional<Sale> obj = repository.findById(id);
         return obj.get();
     }
+
 //    public List<SellerDTO> findBetween(@RequestParam Instant startDate, @RequestParam Instant endDate) {
 //
-//        long days = Duration.between(startDate,endDate).toDays();
 //    }
+
+    public List<Object[]> findDateBetween(Instant startDate, Instant endDate){
+        return repository.findDateBetween(startDate,endDate);
+    }
 }

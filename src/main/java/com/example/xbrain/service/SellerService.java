@@ -2,6 +2,7 @@ package com.example.xbrain.service;
 
 import com.example.xbrain.entities.Seller;
 import com.example.xbrain.repository.SellerRepository;
+import com.example.xbrain.service.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class SellerService {
 
     public Seller findById(Long id) {
         Optional<Seller> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
     public Seller insert(Seller obj) {
         return repository.save(obj);

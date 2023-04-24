@@ -4,6 +4,7 @@ import com.example.xbrain.entities.Seller;
 import com.example.xbrain.repository.SellerRepository;
 import com.example.xbrain.service.exception.DatabaseException;
 import com.example.xbrain.service.exception.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -41,10 +42,15 @@ public class SellerService {
     }
 
     public Seller update(Long id, Seller obj) {
-        Seller entity = repository.getReferenceById(id);
-        updateData(entity, obj);
-        return repository.save(entity);
+        try {
+            Seller entity = repository.getReferenceById(id);
+            updateData(entity, obj);
+            return repository.save(entity);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
     }
+
     public void updateData(Seller entity, Seller obj) {
         entity.setName(obj.getName());
     }

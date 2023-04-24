@@ -40,6 +40,12 @@ public class SellerController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Seller> update(@PathVariable Long id, @RequestBody Seller obj) {
+        obj = service.update(id, obj);
+        return ResponseEntity.ok().body(obj);
+    }
 }
 
 

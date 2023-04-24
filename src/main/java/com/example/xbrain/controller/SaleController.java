@@ -29,15 +29,11 @@ public class SaleController {
         Sale obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
-    @GetMapping(value = "/between")
-    public ResponseEntity<List<SellerDTO>> findAllByDateBetween(@RequestParam Instant startDate, @RequestParam Instant endDate) {
-        List<SellerDTO> list = service.findBetween(startDate, endDate);
-        return ResponseEntity.ok().body(list);
-    }
-
-
-
-
+//    @GetMapping(value = "/between")
+//    public ResponseEntity<List<SellerDTO>> findAllByDateBetween(@RequestParam Instant startDate, @RequestParam Instant endDate) {
+//        List<SellerDTO> list = service.findBetween(startDate, endDate);
+//        return ResponseEntity.ok().body(list);
+//    }
 }
 
 

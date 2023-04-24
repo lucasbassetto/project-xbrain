@@ -29,4 +29,13 @@ public class SellerService {
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+    public Seller update(Long id, Seller obj) {
+        Seller entity = repository.getReferenceById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
+    }
+    public void updateData(Seller entity, Seller obj) {
+        entity.setName(obj.getName());
+    }
 }

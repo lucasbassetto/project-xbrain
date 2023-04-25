@@ -41,5 +41,8 @@ class SaleServiceTest {
 
         Sale vendaCriada = saleService.insert(sale);
         Assertions.assertEquals(id, vendaCriada.getId());
+        Assertions.assertEquals(date, vendaCriada.getDate());
+        Assertions.assertEquals(price, vendaCriada.getPrice());
+        Assertions.assertEquals(seller, vendaCriada.getSeller());
     }
 }

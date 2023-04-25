@@ -23,29 +23,29 @@ Para este projeto, eu crei uma classe "TestConfig" - onde foram instanciados 2 v
 
 
 ## Criando vendedor
-![Pagina inicial](https://github.com/lucasbassetto/assets/blob/main/Xbrain/criacao-vendedor.png?raw=true)
+![Criando vendedor](https://github.com/lucasbassetto/assets/blob/main/Xbrain/criacao-vendedor.png?raw=true)
 
 <br/>
 
 ## Retornando vendedores
-![Get vendedores](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendedores.png?raw=true)
+![Retornando vendedores](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendedores.png?raw=true)
 
 <br/>
 
 ## Criando venda
-![Cadastrar Cliente](https://github.com/lucasbassetto/assets/blob/main/Xbrain/criando-venda.png?raw=true)
+![Criando venda](https://github.com/lucasbassetto/assets/blob/main/Xbrain/criando-venda.png?raw=true)
 
 <br/>
 
 ## Retornando vendas
-![Listar Clientes](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas.png?raw=true)
+![Retornando vendas](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas.png?raw=true)
 
 - Repare que a nova venda foi retornada com sucesso.
 
 <br/>
 
 ## Retornando vendas conforme parâmetro
-![Datalhe Cliente](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas-parametro.png?raw=true)
+![Retornando vendas conforme parâmetro](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas-parametro.png?raw=true)
 
 - Repare neste print que a data passada como parâmetro foi 12-02-2023 e 19-02-2023 (7 dias);
 
@@ -58,12 +58,12 @@ Para este projeto, eu crei uma classe "TestConfig" - onde foram instanciados 2 v
 <br/>
 
 ## Adicionando mais vendas
-![Datalhe Cliente](https://github.com/lucasbassetto/assets/blob/main/Xbrain/add-venda-id-3_1.png?raw=true)
+![Adicionando mais vendas](https://github.com/lucasbassetto/assets/blob/main/Xbrain/add-venda-id-3_1.png?raw=true)
 
 - Adicionando uma venda para o vendedor "Jesse Pinkman".
 
 ## Adicionando mais vendas 
-![Datalhe Cliente](https://github.com/lucasbassetto/assets/blob/main/Xbrain/add-venda-id-3_2.png?raw=true)
+![Adicionando mais vendas ](https://github.com/lucasbassetto/assets/blob/main/Xbrain/add-venda-id-3_2.png?raw=true)
 
 - Adicionando uma venda para o vendedor "Jesse Pinkman".
 
@@ -72,16 +72,22 @@ Para este projeto, eu crei uma classe "TestConfig" - onde foram instanciados 2 v
 <br/>
 
 ## Retornando as vendas atualizadas
-![Datalhe Cliente](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas-atualizado.png?raw=true)
+![Retornando as vendas atualizadas](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas-atualizado.png?raw=true)
 
 - Repare que as novas vendas de id "23" e "24" foram retornadas com sucesso após a inclusão das mesmas.
 
 <br/>
 
 ## Retornando as vendas com parâmetros atualizadas
-![Datalhe Cliente](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas-parametro-atualizado.png?raw=true)
+![Retornando as vendas com parâmetros atualizadas](https://github.com/lucasbassetto/assets/blob/main/Xbrain/get-vendas-parametro-atualizado.png?raw=true)
 
 - Repare no print que as vendas conforme período informado foram atualizadas. O vendedor "Jesse Pinkman" agora possui 3 vendas no total, haja vista que foram adicionadas mais 2 vendas para o mesmo.
+
+## Teste 1
+![Teste 1](https://github.com/lucasbassetto/assets/blob/main/Xbrain/TesteSale.png?raw=true)
+
+## Teste 2
+![Teste 2](https://github.com/lucasbassetto/assets/blob/main/Xbrain/TesteSeller.png?raw=true)
 
 # Tecnologias utilizadas
 ## Back end

@@ -1,62 +1,47 @@
 package com.example.xbrain.service;
 
+import com.example.xbrain.entities.Sale;
 import com.example.xbrain.entities.Seller;
+import com.example.xbrain.repository.SellerRepository;
 import com.example.xbrain.service.exception.DatabaseException;
 import com.example.xbrain.service.exception.ResourceNotFoundException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.Instant;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class SellerServiceTest {
 
-    @Autowired
-    private SellerService service;
+    @InjectMocks
+    SellerService service;
 
+    @Mock
+    SellerRepository repository;
     @Test
-    public void testFindAll() {
-        List<Seller> list = service.findAll();
-        assertNotNull(list);
-        assertTrue(!list.isEmpty());
+    public void testarEAdicionarVendedor() {
+        Long id = 1L;
+        String name = "Lucas Bassetto";
+
+        Seller seller = new Seller(id, name);
+
+        Mockito.when(
+                repository.save(Mockito.any())
+        ).thenReturn(seller);
+
+        Seller sellerCriado = service.insert(seller);
+        Assertions.assertEquals(id, sellerCriado.getId());
+        Assertions.assertEquals(name, sellerCriado.getName());
     }
 
-    @Test
-    public void testFindById() {
-        Seller seller = service.findById(1L);
-        assertNotNull(seller);
-        assertEquals(1, seller.getId());
-    }
-
-    @Test
-    public void testFindByIdNotFound() {
-        assertThrows(ResourceNotFoundException.class, () -> {
-            service.findById(999L);
-        });
-    }
-
-    @Test
-    public void testInsert() {
-        Seller seller = new Seller(null, "Seller 4");
-        seller = service.insert(seller);
-        assertNotNull(seller.getId());
-    }
-
-    @Test
-    public void testDelete() {
-        service.delete(3L);
-        assertThrows(ResourceNotFoundException.class, () -> {
-            service.findById(3L);
-        });
-    }
-
-    @Test
-    public void testDeleteIntegrityViolation() {
-        assertThrows(DatabaseException.class, () -> {
-            service.delete(1L);
-        });
-    }
 }

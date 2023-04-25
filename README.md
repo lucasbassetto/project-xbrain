@@ -84,10 +84,10 @@ Para este projeto, eu crei uma classe "TestConfig" - onde foram instanciados 2 v
 - Repare no print que as vendas conforme período informado foram atualizadas. O vendedor "Jesse Pinkman" agora possui 3 vendas no total, haja vista que foram adicionadas mais 2 vendas para o mesmo.
 
 ## Teste 1
-![Teste 1](https://github.com/lucasbassetto/assets/blob/main/Xbrain/TesteSale.png?raw=true)
+![Teste 1](https://github.com/lucasbassetto/assets/blob/main/Xbrain/TesteSale1.png?raw=true)
 
 ## Teste 2
-![Teste 2](https://github.com/lucasbassetto/assets/blob/main/Xbrain/TesteSeller.png?raw=true)
+![Teste 2](https://github.com/lucasbassetto/assets/blob/main/Xbrain/TesteSeller1.png?raw=true)
 
 # Tecnologias utilizadas
 ## Back end

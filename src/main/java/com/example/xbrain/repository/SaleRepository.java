@@ -22,6 +22,4 @@ public interface SaleRepository extends JpaRepository<Sale, Long> {
             "WHERE TB_SALE.DATE >= :startDate AND TB_SALE.DATE <= :endDate " +
             "GROUP BY TB_SELLER.NAME", nativeQuery = true)
     List<Object[]> findDateBetween(@Param("startDate") Instant startDate, @Param("endDate") Instant endDate);
-
-
 }

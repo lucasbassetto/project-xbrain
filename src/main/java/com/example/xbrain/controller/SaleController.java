@@ -24,6 +24,7 @@ public class SaleController {
         List<Sale> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<Sale> findById(@PathVariable Long id){
         Sale obj = service.findById(id);
@@ -34,7 +35,6 @@ public class SaleController {
 //        List<SellerDTO> list = service.findBetween(startDate, endDate);
 //        return ResponseEntity.ok().body(list);
 //    }
-
     @GetMapping(value = "/between")
     public ResponseEntity<List<Object[]>> findAllByDateBetween(@RequestParam Instant startDate, @RequestParam Instant endDate) {
         List<Object[]> list = service.findDateBetween(startDate, endDate);

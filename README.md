@@ -53,7 +53,7 @@ Para este projeto, eu crei uma classe "TestConfig" - onde foram instanciados 2 v
 
 - O vendedor "Joao das Neves" possui 7 vendas no total, sendo 1 venda média por dia.
 
-- O vendedor "Jesse Pinkman" possui apenas 1 venda, que foi feita anteriormente com o método PUT conforme o print "Criando venda".
+- O vendedor "Jesse Pinkman" possui apenas 1 venda, que foi feita anteriormente com o método POST conforme o print "Criando venda".
 
 <br/>
 
